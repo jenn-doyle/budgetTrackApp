@@ -8,8 +8,8 @@ const AddExpenseForm = () => {
   const [name, setName] = useState("");
   const [cost, setCost] = useState("");
 
-  const onSubmit = (event) => {
-    event.preventDefault();
+  const onSubmit = (e) => {
+    e.preventDefault();
 
     const expense = {
       id: uuidv4(),
@@ -21,12 +21,14 @@ const AddExpenseForm = () => {
       type: "ADD_EXPENSE",
       payload: expense,
     });
+    setName("");
+    setCost("");
   };
 
   return (
     <form onSubmit={onSubmit}>
       <div className="row">
-        <div className="col-sm">
+        <div className="col-sm col-lg-4">
           <label for="name">Name</label>
           <input
             required="required"
@@ -34,22 +36,24 @@ const AddExpenseForm = () => {
             className="form-control"
             id="name"
             value={name}
-            onChange={(event) => setName(event.target.value)}
-          ></input>
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
-        <div className="col-sm">
+        <div className="col-sm col-lg-4">
           <label for="cost">Cost</label>
           <input
             required="required"
-            type="text"
+            type="number"
             className="form-control"
             id="cost"
             value={cost}
-            onChange={(event) => setCost(event.target.value)}
-          ></input>
+            onChange={(e) => setCost(e.target.value)}
+          />
         </div>
+      </div>
+      <div className="row mt-3">
         <div className="col-sm">
-          <button type="submit" className="btn btn-primary mt-3">
+          <button type="submit" className="btn btn-primary">
             Save
           </button>
         </div>

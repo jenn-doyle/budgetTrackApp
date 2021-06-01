@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const EditBudget = (budget, handleSaveClick) => {
+const EditBudget = ({ budget, handleSaveClick }) => {
   const [value, setValue] = useState(budget);
   return (
-    <div>
+    <>
       <input
         required="required"
         type="number"
@@ -19,7 +19,7 @@ const EditBudget = (budget, handleSaveClick) => {
       >
         Save
       </button>
-    </div>
+    </>
   );
 };
 

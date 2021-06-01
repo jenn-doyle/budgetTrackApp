@@ -16,7 +16,19 @@ const ExpenseItem = ({ id, name, cost }) => {
     <li className="list-group-item d-flex justify-content-between align-items-center">
       {name}
       <div>
-        <span className="badge badge-primary badge-pill mr-3">£{cost}</span>
+        <span
+          style={{
+            backgroundColor: "#2d70e3",
+            color: "white",
+            padding: "10px",
+            paddingTop: "4px",
+            paddingBottom: "4px",
+            borderRadius: "32px",
+            marginRight: "20px",
+          }}
+        >
+          £{cost}
+        </span>
         <TiDelete size="1.5em" onClick={handleDeleteExpense}></TiDelete>
       </div>
     </li>
