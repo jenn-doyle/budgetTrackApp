@@ -18,8 +18,8 @@ const ExpenseItem = ({ id, name, cost }) => {
       <div>
         <span
           style={{
-            backgroundColor: "#2d70e3",
-            color: "white",
+            backgroundColor: "#d3e8cc",
+            color: "black",
             padding: "10px",
             paddingTop: "4px",
             paddingBottom: "4px",
